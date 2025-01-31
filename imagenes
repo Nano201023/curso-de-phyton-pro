@@ -14,4 +14,4 @@ async def mem(ctx):
         picture = discord.File(f)
     # A continuación, podemos enviar este archivo como parámetro.
     await ctx.send(file=picture)
-bot.run("MTMyNzQ2MDQ2NzIxMTM3MDUwNg.GnZKsr.GL6mDdnAXuygiWj0O4gab7GgLG-1Ptw-0ejyDM")
+bot.run("")
