@@ -2,8 +2,9 @@ import discord
 from discord.ext import commands
 
 intents = discord.Intents.default()
-intents.messages = True
-bot = commands.Bot(command_prefix="!", intents=intents)
+intents.message_content = True
+bot = commands.Bot(command_prefix="?", intents=intents)
+
 
 @bot.command(name='consejos')
 async def consejos(ctx):
@@ -16,8 +17,9 @@ async def consejos(ctx):
         "Reutiliza frascos y recipientes en casa.",
         "Opta por transporte público o bicicleta para moverte.",
     ]
-    response = "Consejos para cuidar el medio ambiente:\n" + "\n".join(f"- {consejo}" for consejo in consejos_list)
+    response = "**Consejos para cuidar el medio ambiente:**\n" + "\n".join(f"- {consejo}" for consejo in consejos_list)
     await ctx.send(response)
+
 
 @bot.command(name='separar')
 async def separar(ctx):
@@ -29,11 +31,13 @@ async def separar(ctx):
         "Metales: Latas de aluminio y hojalata.",
         "No reciclables: Papel higienico, envolturas sucias, etc."
     ]
-    response = "Guía para separar los residuos:\n" + "\n".join(f"- {item}" for item in separacion_list)
+    response = "**Guía para separar los residuos:**\n" + "\n".join(f"- {item}" for item in separacion_list)
     await ctx.send(response)
+
 
 @bot.event
 async def on_ready():
     print(f'Bot conectado como {bot.user}')
 
-bot.run('MTMyNzQ1ODYyMjM2MzY2NDQ4NQ.GlA-S5.nwJqT_JecvkZWwNXC-xaKEXrtE6hrySCORpwj4')
+
+bot.run('')
